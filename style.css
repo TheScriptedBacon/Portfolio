@@ -1,253 +1,31 @@
-:root {
-    --bg: #000000;
-    --fg: #ffffff;
-    --dim: #444444;
-    --accent: #ffffff;
-    --font: 'JetBrains Mono', monospace;
-}
-
-body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: var(--font);
-    margin: 0;
-    overflow-x: hidden;
-    cursor: crosshair;
-    /* Gamer feel */
-}
-
-/* HUD / Nav */
-.hud {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid var(--dim);
-    z-index: 100;
-    font-size: 0.8rem;
-    backdrop-filter: blur(5px);
-}
-
-/* ESP Switch */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    margin-left: 10px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--dim);
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: var(--fg);
-}
-
-input:checked+.slider:before {
-    transform: translateX(20px);
-    background-color: black;
-}
-
-/* Hero */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.profile-wrapper {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    margin-bottom: 30px;
-}
-
-.avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    filter: grayscale(100%) contrast(1.2);
-    border: 3px solid var(--fg);
-}
-
-/* Radar Scan Effect on Profile */
-.scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.3) 51%, transparent 52%);
-    background-size: 100% 200%;
-    animation: scan 3s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes scan {
-    0% {
-        background-position: 0% -100%;
-    }
-
-    100% {
-        background-position: 0% 200%;
-    }
-}
-
-h1.glitch {
-    font-size: 4rem;
-    position: relative;
-}
-
-/* Content Sections */
-.content-section {
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    min-height: 60vh;
-}
-
-/* The ESP / Wallhack Logic */
-.redacted-content {
-    background: #111;
-    padding: 30px;
-    border: 1px dashed var(--dim);
-    transition: all 0.5s ease;
-    position: relative;
-}
-
-/* When blurred */
-.blurred {
-    filter: blur(8px);
-    user-select: none;
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-.instruction {
-    color: var(--dim);
-    margin-bottom: 20px;
-    font-size: 0.8rem;
-    animation: flash 2s infinite;
-}
-
-/* Terminal Styling */
-.terminal-window {
-    background: #0a0a0a;
-    border: 1px solid var(--dim);
-    border-radius: 5px;
-    margin-top: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.terminal-header {
-    background: #222;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--dim);
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.red {
-    background: #ff5f56;
-}
-
-.yellow {
-    background: #ffbd2e;
-}
-
-.green {
-    background: #27c93f;
-}
-
-.title {
-    margin-left: 10px;
-    font-size: 0.8rem;
-    color: #aaa;
-}
-
-.terminal-body {
-    padding: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    min-height: 300px;
+.category-label {
+    font-size: 0.7rem;
+    color: #666;
+    margin: 15px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .cmd-btn {
-    background: transparent;
-    border: 1px solid var(--dim);
-    color: var(--fg);
-    padding: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    font-family: inherit;
-    margin-bottom: 10px;
+    display: block; /* Stack buttons like a real menu */
+    width: 100%;
+    text-align: left;
+    background: #111;
+    border: 1px solid #333;
+    margin-bottom: 5px;
+    padding: 12px;
+    font-size: 0.85rem;
 }
 
 .cmd-btn:hover {
-    background: var(--fg);
-    color: var(--bg);
+    border-color: #fff;
+    padding-left: 20px; /* Slide effect on hover */
 }
 
 #output-log {
     margin-top: 20px;
-    color: #ccc;
-    white-space: pre-wrap;
-}
-
-.highlight {
-    background: white;
-    color: black;
-    padding: 0 5px;
-}
-
-@keyframes flash {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.3;
-    }
+    padding-top: 20px;
+    border-top: 1px dashed #333;
+    color: #00ff41; /* Classic Matrix/Terminal Green for results */
+    font-size: 0.9rem;
 }
