@@ -1,25 +1,122 @@
-<section class="content-section" id="projects">
-    <h2>// RUNNABLE_MODULES</h2>
-    
-    <div class="terminal-window">
-        <div class="terminal-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="title">carbon@system:~/automation</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon | Automation Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CARBON.</div>
+        <ul class="nav-links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <div class="terminal-body" id="terminal-output">
-            <p>> System initialized. Runtimes: Python 3.12, AI-Core.</p>
-            <p>> Select a category to execute:</p>
-            
-            <div class="command-list">
-                <div class="category-label">_GAME_AUTOMATION</div>
-                <button class="cmd-btn" onclick="runCommand('roblox_py')">python3 roblox_external.py</button>
-                
-                <div class="category-label">_AI_SYSTEMS</div>
-                <button class="cmd-btn" onclick="runCommand('ai_agent')">python3 ai_thought_partner.py</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="https://cdn.discordapp.com/avatars/956167389010075678/afca7938ceb80209e293265fcdde0077.png?size=4096" alt="Carbon Profile" class="profile-pic">
             </div>
-            <div id="output-log"></div>
+            <h1>I am <span class="highlight">Carbon</span>.</h1>
+            <p class="typewriter">I automate the mundane to create the extraordinary.</p>
+            <a href="#vision" class="btn">Explore My Mind</a>
         </div>
-    </div>
-</section>
+    </header>
+
+    <section id="vision" class="section">
+        <div class="container">
+            <h2 class="section-title">The Vision</h2>
+            <div class="content-grid">
+                <div class="text-block">
+                    <h3>Efficiency via Automation</h3>
+                    <p>
+                        I do not believe in manual labor for tasks that machines can execute with greater precision. 
+                        My philosophy is simple: <strong>Automate everything.</strong> 
+                        I am driven by the desire to turn human effort into autonomous workflows, allowing for high-level decision making while sensors and scripts handle the rest.
+                    </p>
+                </div>
+                <div class="inspiration-block">
+                    <h3>Inspirations</h3>
+                    <ul>
+                        <li>
+                            <strong>Autonomous Transit:</strong> The driverless metro systems of Italy. A symphony of sensors and logic moving thousands without human error.
+                        </li>
+                        <li>
+                            <strong>Service Robotics:</strong> The autonomous infrastructure of Japan, where robots serve coffee and manage logistics seamlessly.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section inverted">
+        <div class="container">
+            <h2 class="section-title">Selected Works</h2>
+            <div class="project-card">
+                <div class="card-header">
+                    <h3>Game Logic Automation</h3>
+                    <span class="tag">Lua</span> <span class="tag">Scripting</span> <span class="tag">Reverse Engineering</span>
+                </div>
+                <p>
+                    Developed sophisticated external automation bots for platforms like Roblox. Focused on creating undetectable, external scripts that interact with game engines to perform complex tasks without human input.
+                </p>
+                <ul class="project-specs">
+                    <li><strong>Focus:</strong> Task Automation & Efficiency</li>
+                    <li><strong>Method:</strong> External Script Injection</li>
+                    <li><strong>Status:</strong> Undetected / Operational</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <h3>Future Architecture</h3>
+                    <span class="tag">AI</span> <span class="tag">Python</span>
+                </div>
+                <p>
+                    Currently conceptualizing systems to bridge decision-making AI with day-to-day desktop tasks.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="section">
+        <div class="container">
+            <h2 class="section-title">The Approach</h2>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h3>Self-Taught</h3>
+                    <p>I operate outside traditional academic constraints. My knowledge is forged through documentation, trial, error, and persistence.</p>
+                </div>
+                <div class="approach-item">
+                    <h3>AI-Augmented</h3>
+                    <p>I leverage Artificial Intelligence not just as a tool, but as a partner. My workflow is heavily integrated with LLMs to accelerate coding and logic generation.</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Scalable Logic</h3>
+                    <p>I write code intended to run forever. If it requires my constant attention, it isn't finished.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Carbon. Engineered for Automation.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
