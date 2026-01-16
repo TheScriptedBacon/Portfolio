@@ -8,14 +8,14 @@ document.querySelectorAll('.section-title').forEach(header => {
             event.target.innerText = event.target.innerText
                 .split("")
                 .map((letter, index) => {
-                    if (index < iterations) {
+                    if(index < iterations) {
                         return event.target.dataset.value[index];
                     }
                     return letters[Math.floor(Math.random() * 26)];
                 })
                 .join("");
 
-            if (iterations >= event.target.dataset.value.length) {
+            if(iterations >= event.target.dataset.value.length) { 
                 clearInterval(interval);
             }
             iterations += 1 / 3;
