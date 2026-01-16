@@ -1,54 +1,38 @@
-const data = {
-    roblox_py: `
-> [info] Initializing Python-Roblox Bridge...
-> [info] Loading external vision/memory modules...
---------------------------------------------------
-PROJECT: EXTERNAL GAME BOT
-LANGUAGE: Python
-STATUS: Operational / Undetectable
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-DETAILS:
-- Developed an external automation suite for Roblox.
-- Bypasses standard in-game detection by running 
-  logic outside the game's environment.
-- Automates repetitive tasks via screen-scraping 
-  and memory-reading logic.
---------------------------------------------------
-[SYSTEM]: Efficiency increased by 100%.
-    `,
-    ai_agent: `
-> [info] Connecting to AI Neural Link...
-> [info] Workflow: Self-Taught + AI Augmented.
---------------------------------------------------
-METHODOLOGY: AI-DRIVEN DEVELOPMENT
-"I don't memorize syntax; I master logic."
+// A "Hacker" text effect for headings
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-DETAILS:
-- Heavy reliance on LLMs to translate vision into 
-  functional Python code.
-- Focuses on high-level architecture while AI 
-  handles the manual code generation.
-- Result: 10x faster deployment of automation scripts.
---------------------------------------------------
-[SYSTEM]: Status: Human-AI hybrid workflow active.
-    `
-};
+document.querySelectorAll('h1, h2').forEach(header => {
+    header.onmouseover = event => {
+        let iterations = 0;
+        const interval = setInterval(() => {
+            event.target.innerText = event.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if(index < iterations) {
+                        return event.target.dataset.value[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)];
+                })
+                .join("");
 
-function runCommand(commandKey) {
-    const outputLog = document.getElementById('output-log');
-    outputLog.innerHTML = ""; 
-    const text = data[commandKey];
-    let i = 0;
-    
-    // Auto-scroll the terminal as it types
-    function typeWriter() {
-        if (i < text.length) {
-            outputLog.innerHTML += text.charAt(i);
-            i++;
-            // Terminal sound would go here
-            setTimeout(typeWriter, 5); 
-            outputLog.scrollTop = outputLog.scrollHeight;
-        }
+            if(iterations >= event.target.dataset.value.length) { 
+                clearInterval(interval);
+            }
+            iterations += 1 / 3;
+        }, 30);
     }
-    typeWriter();
-}
+    // Store original text
+    header.dataset.value = header.innerText;
+});
+
+console.log("System Status: Operational. Welcome, Carbon.");
