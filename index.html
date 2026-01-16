@@ -3,94 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbon | Automation Architect</title>
+    <title>Carbon | Automation</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="hud">
-        <div class="hud-item">USER: CARBON</div>
-        <div class="hud-item status"><span class="dot green"></span> SYSTEM_LIVE</div>
-        <div class="hud-item toggle-container">
-            <span>ESP_MODE:</span>
-            <label class="switch">
-                <input type="checkbox" id="esp-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
+    <nav class="navbar">
+        <div class="logo">CARBON.</div>
+        <ul class="nav-links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#tech">Architecture</a></li>
+            <li><a href="#projects">Work</a></li>
+        </ul>
     </nav>
 
     <header class="hero">
-        <div class="profile-wrapper">
-            <div class="avatar-container">
-                <img src="https://cdn.discordapp.com/avatars/956167389010075678/afca7938ceb80209e293265fcdde0077.png?size=4096" alt="Carbon" class="avatar">
-            </div>
-            <div class="scan-line"></div>
+        <div class="profile-container">
+            <img src="https://cdn.discordapp.com/avatars/956167389010075678/afca7938ceb80209e293265fcdde0077.png?size=4096" alt="Carbon Profile" class="profile-pic">
         </div>
-        <h1 class="glitch" data-text="CARBON">CARBON</h1>
-        <p class="subtitle">EXTERNAL AUTOMATION // PYTHON // AI-AUGMENTED</p>
+        <h1>I am <span class="highlight">Carbon</span>.</h1>
+        <p class="subtitle">I build the bots that do the work for me.</p>
+        <div class="scroll-hint">Unlock the system below ↓</div>
     </header>
 
-    <section class="content-section" id="vision">
-        <h2>// MISSION_PARAMETER</h2>
-        <p class="instruction">[!] ACTIVATE ESP TO VIEW ENCRYPTED LOGS</p>
-        
-        <div class="redacted-content blurred" id="hidden-data">
-            <p class="bio-text">
-                I am an efficiency-driven developer focused on **Python External Automation**. 
-                Inspired by autonomous transit in Italy and robotics in Japan, I build scripts that 
-                handle inputs and movements locally to eliminate human intervention.
-            </p>
+    <section id="tech" class="section">
+        <div class="container">
+            <h2 class="section-title">The Bot Architecture</h2>
             
-            <div class="knowledge-grid">
-                <div class="k-card" onclick="this.classList.toggle('flipped')">
-                    <div class="k-inner">
-                        <div class="k-front">[+] METRO_LOGIC</div>
-                        <div class="k-back">Autonomous transit systems prove that complex movement is best handled by logic, not hands.</div>
-                    </div>
+            <div class="security-wrapper" id="tech-wrapper">
+                <div class="challenge-ui">
+                    <p class="challenge-instruction">Security Check: Slide to Authenticate</p>
+                    <input type="range" min="0" max="100" value="0" class="unlock-slider" id="tech-slider">
                 </div>
-                <div class="k-card" onclick="this.classList.toggle('flipped')">
-                    <div class="k-inner">
-                        <div class="k-front">[+] ROBOTIC_ZEN</div>
-                        <div class="k-back">Japan's service robots represent my goal: Seamless execution without human friction.</div>
+
+                <div class="locked-content blurred">
+                    <div class="text-block">
+                        <h3>Exploit vs. External</h3>
+                        <p>There are two ways to automate Roblox: <strong>Exploit Bots</strong> and <strong>External Bots</strong>.</p>
+                        <p>Exploits are risky and easily detected. I build <strong>External Bots</strong>. These are undetectable because they don't touch the game's internal code. Instead, they control the mouse and keyboard like a human would.</p>
+                        <p>I use <strong>Python</strong> because it’s the ultimate engine for this. Using libraries like <code>py-roblox-bot</code>, I can make a character move, chat, and react to anything in the game environment without ever getting banned.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="content-section" id="projects">
-        <h2>// PROJECT_RUNTIMES</h2>
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="title">carbon@local_host:~/python_scripts</span>
-            </div>
-            <div class="terminal-body">
-                <p class="terminal-meta">> Python 3.12 detected. Runtimes optimized.</p>
-                <p class="terminal-meta">> Click a module to execute command:</p>
-                
-                <div class="button-grid">
-                    <button class="action-btn" onclick="runCommand('roblox_py')">
-                        <span class="btn-icon">⚡</span>
-                        <span class="btn-text">run_roblox_external.py</span>
-                    </button>
-                    
-                    <button class="action-btn" onclick="runCommand('ai_agent')">
-                        <span class="btn-icon">🤖</span>
-                        <span class="btn-text">ai_logic_partner.py</span>
-                    </button>
+    <section id="projects" class="section inverted">
+        <div class="container">
+            <h2 class="section-title">Selected Works</h2>
+
+            <div class="security-wrapper" id="projects-wrapper">
+                <div class="challenge-ui">
+                    <p class="challenge-instruction">Hold Button to Authorize Data Access</p>
+                    <button class="hold-btn" id="hold-btn">HOLD (0%)</button>
                 </div>
-                <div id="output-log"></div>
+
+                <div class="locked-content blurred">
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h3>Roblox Controller</h3>
+                            <p>A Discord-to-Roblox bridge. It allows me to control an active Roblox account directly through Discord commands.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Kahoot Roblox Bot</h3>
+                            <p>A safe, non-exploitative alternative to Kahoot bots. It replicates exploit-level speed and accuracy through external logic.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Control Bot</h3>
+                            <p>Character puppetry. This allows other players in the game to move my character using chat commands like "!forward 5".</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Pls Donate Bot</h3>
+                            <p>Automated monetization. This bot runs overnight, telling dad jokes for Robux tips. It has successfully generated over 500 Robux autonomously.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Speed Typer Bot</h3>
+                            <p>A chat-based reaction game. It challenges users to type long messages and tracks their time. A proof-of-concept for chat-detection logic.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Multi Message Bot</h3>
+                            <p>The simplest automation. It scans every Roblox PID on the system and broadcasts a single message across all instances simultaneously.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>TERMINAL_CARBON // BUILT WITH AI & PYTHON // 2026</p>
+        <p>&copy; 2026 Carbon. Engineered for Automation.</p>
     </footer>
 
     <script src="script.js"></script>
