@@ -1,93 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon | Automation Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <nav class="navbar">
         <div class="logo">CARBON.</div>
         <ul class="nav-links">
             <li><a href="#vision">Vision</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-            <li><a href="#projects">Work</a></li>
+            <li><a href="#roblox-bots">Roblox Bots</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <div class="profile-container">
-            <img src="https://cdn.discordapp.com/avatars/956167389010075678/afca7938ceb80209e293265fcdde0077.png?size=4096" alt="Carbon" class="profile-pic">
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="https://cdn.discordapp.com/avatars/956167389010075678/afca7938ceb80209e293265fcdde0077.png?size=4096"
+                    alt="Carbon" class="profile-pic">
+            </div>
+            <h1>I AM <span class="highlight">CARBON</span>.</h1>
+            <p class="subtitle">I automate the boring stuff so I can focus on the logic.</p>
         </div>
-        <h1>I AM <span class="highlight">CARBON</span>.</h1>
-        <p class="subtitle">I automate the boring stuff so I can focus on the logic.</p>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="line"></div>
+        </div>
     </header>
+
+    <div class="spacer-large"></div>
 
     <section id="vision" class="section">
         <div class="container">
             <h2 class="section-title" data-value="THE VISION">THE VISION</h2>
-            <div class="content-grid">
-                <div class="text-block">
+            <div class="content-split">
+                <div class="vision-main">
                     <h3>Stop doing manual work</h3>
-                    <p>I don't like wasting time. If I have to do a task more than twice, I build a robot to do it for me. My goal is to turn human effort into autonomous workflows.</p>
+                    <p>I don't like wasting time. If I have to do a task more than twice, I build a robot to do it for
+                        me. My goal is to turn human effort into autonomous workflows.</p>
                 </div>
-                <div class="text-block">
+                <div class="vision-side">
                     <h3>Inspirations</h3>
-                    <p><strong>Italy's Metros:</strong> Driverless trains that move thousands of people using only sensors and code.</p>
-                    <p><strong>Japan's Robotics:</strong> Service robots that handle logistics and hospitality without human friction.</p>
+                    <div class="inspiration-item">
+                        <strong>Italy's Metros</strong>
+                        <p>Driverless trains that move thousands of people using only sensors and code.</p>
+                    </div>
+                    <div class="inspiration-item">
+                        <strong>Japan's Robotics</strong>
+                        <p>Service robots that handle logistics and hospitality without human friction.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="architecture" class="section inverted">
+    <div class="spacer-divider"></div>
+
+    <section id="roblox-bots" class="section">
         <div class="container">
             <h2 class="section-title" data-value="ROBLOX BOTS">ROBLOX BOTS</h2>
-            <p>Roblox bots are controlled by code. There are 2 types: Exploit Bots and External Bots.</p>
-            <div class="architecture-grid">
-                <div class="arch-card">
-                    <h4>Exploit Bots</h4>
+            <p class="section-intro">Roblox bots are controlled by code. There are 2 types: Exploit Bots and External
+                Bots.</p>
+
+            <div class="bot-types-grid">
+                <div class="bot-type-card danger">
+                    <div class="card-header">
+                        <span class="status-dot red"></span>
+                        <h4>Exploit Bots</h4>
+                    </div>
                     <p>Risky and highly detectable. They inject code into the game, which usually leads to bans.</p>
                 </div>
-                <div class="arch-card">
-                    <h4>External Bots</h4>
-                    <p>Undetectable and safe. I code these in <strong>Python</strong> because it can control the mouse and keyboard like a human. I use the <code>py-roblox-bot</code> library to make characters move and chat.</p>
+                <div class="bot-type-card safe">
+                    <div class="card-header">
+                        <span class="status-dot green"></span>
+                        <h4>External Bots</h4>
+                    </div>
+                    <p>Undetectable and safe. I code these in <span class="accent-text">Python</span> because it can
+                        control the mouse
+                        and keyboard like a human. I use the <code>py-roblox-bot</code> library to make characters move
+                        and chat.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="spacer-large"></div>
 
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title" data-value="PROJECTS">PROJECTS</h2>
-            <div class="project-grid">
-                <div class="card">
-                    <h4>Roblox Controller</h4>
-                    <p>A Discord Bot that allows users to control a Roblox account in-game directly from Discord.</p>
+            <div class="fields-grid">
+                <!-- Field Item -->
+                <div class="field-item">
+                    <div class="field-label">PROJECT_01</div>
+                    <div class="field-content">
+                        <h4>Roblox Controller</h4>
+                        <p>A Discord Bot that allows users to control a Roblox account in-game directly from Discord.
+                        </p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>Kahoot Roblox Bot</h4>
-                    <p>A safer alternative to exploits. It works exactly like a real Kahoot bot but runs externally.</p>
+
+                <!-- Field Item -->
+                <div class="field-item">
+                    <div class="field-label">PROJECT_02</div>
+                    <div class="field-content">
+                        <h4>Kahoot Roblox Bot</h4>
+                        <p>A safer alternative to exploits. It works exactly like a real Kahoot bot but runs externally.
+                        </p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>Control Bot</h4>
-                    <p>Allows other users in the game to control my character using chat commands like "!forward 5".</p>
+
+                <!-- Field Item -->
+                <div class="field-item">
+                    <div class="field-label">PROJECT_03</div>
+                    <div class="field-content">
+                        <h4>Control Bot</h4>
+                        <p>Allows other users in the game to control my character using chat commands like "!forward 5".
+                        </p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>Pls Donate Bot</h4>
-                    <p>Earned 500+ Robux running overnight. It tells dad jokes for tips (5 Robux per joke).</p>
+
+                <!-- Field Item -->
+                <div class="field-item">
+                    <div class="field-label">PROJECT_04</div>
+                    <div class="field-content">
+                        <h4>Pls Donate Bot</h4>
+                        <p>Earned 500+ Robux running overnight. It tells dad jokes for tips (5 Robux per joke).</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>Speed Typer Bot</h4>
-                    <p>A chat game that challenges users to type long messages and tracks their completion time.</p>
+
+                <!-- Field Item -->
+                <div class="field-item">
+                    <div class="field-label">PROJECT_05</div>
+                    <div class="field-content">
+                        <h4>Speed Typer Bot</h4>
+                        <p>A chat game that challenges users to type long messages and tracks their completion time.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>Multi Message Bot</h4>
-                    <p>The simplest one. Input a message in the console, and it broadcasts to every active Roblox PID.</p>
+
+                <!-- Field Item -->
+                <div class="field-item">
+                    <div class="field-label">PROJECT_06</div>
+                    <div class="field-content">
+                        <h4>Multi Message Bot</h4>
+                        <p>The simplest one. Input a message in the console, and it broadcasts to every active Roblox
+                            PID.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,11 +166,14 @@
     <footer id="contact">
         <div class="container">
             <h2 class="section-title" data-value="CONTACT">CONTACT</h2>
-            <p>Need automation? Find me on Discord.</p>
-            <p class="discord-tag">@thescriptedbacon</p>
+            <div class="contact-box">
+                <p>Need automation? Find me on Discord.</p>
+                <a href="#" class="discord-tag">@flash_speed3412</a>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
