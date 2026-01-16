@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbon | Automation</title>
+    <title>Carbon | Automation Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -11,70 +11,95 @@
 
     <nav class="navbar">
         <div class="logo">CARBON.</div>
-        <div class="nav-links">
-            <a href="#tech">Architecture</a>
-            <a href="#projects">Work</a>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
     <header class="hero">
         <div class="profile-container">
             <img src="https://cdn.discordapp.com/avatars/956167389010075678/afca7938ceb80209e293265fcdde0077.png?size=4096" alt="Carbon" class="profile-pic">
         </div>
-        <h1>I AM <span class="highlight">CARBON</span></h1>
-        <p class="subtitle">I BUILD BOTS THAT WORK SO I DON'T HAVE TO.</p>
+        <h1>I AM <span class="highlight">CARBON</span>.</h1>
+        <p class="subtitle">I automate the boring stuff so I can focus on the logic.</p>
     </header>
 
-    <section id="tech" class="section">
-        <h2 class="section-title">// THE_BOT_ARCHITECTURE</h2>
-        
-        <div class="challenge-box" id="tech-challenge">
-            <p>SECURITY CHECK: SLIDE TO AUTHENTICATE</p>
-            <input type="range" min="0" max="100" value="0" class="slider" id="tech-slider">
-        </div>
-
-        <div class="content-box hidden" id="tech-content">
-            <h3>EXPLOIT VS. EXTERNAL</h3>
-            <p>Exploits are high-risk. I build <strong>External Bots</strong>. They simulate human input (mouse/keyboard) instead of injecting code, making them undetectable.</p>
-            <p>Powered by <strong>Python</strong> and <code>py-roblox-bot</code>, these systems can move, chat, and react locally on the host machine.</p>
-        </div>
-    </section>
-
-    <section id="projects" class="section dark">
-        <h2 class="section-title">// SELECTED_WORKS</h2>
-
-        <div class="challenge-box" id="work-challenge">
-            <p>HOLD TO AUTHORIZE DATA ACCESS</p>
-            <button class="hold-btn" id="hold-btn">HOLD (0%)</button>
-        </div>
-
-        <div class="project-grid hidden" id="work-content">
-            <div class="card">
-                <h4>Roblox Controller</h4>
-                <p>Discord-to-Roblox bridge. Remote control for accounts via Discord commands.</p>
-            </div>
-            <div class="card">
-                <h4>Kahoot Bot</h4>
-                <p>Safe, external alternative to traditional exploits. Replicates speed via logic.</p>
-            </div>
-            <div class="card">
-                <h4>Control Bot</h4>
-                <p>Puppetry system. Other players control my character via chat commands.</p>
-            </div>
-            <div class="card">
-                <h4>Pls Donate Bot</h4>
-                <p>Automated monetization. Overnight dad-joke bot. Earned 500+ Robux.</p>
-            </div>
-            <div class="card">
-                <h4>Speed Typer</h4>
-                <p>Chat reaction game. Proof-of-concept for high-speed chat detection.</p>
-            </div>
-            <div class="card">
-                <h4>Multi-Msg</h4>
-                <p>Simultaneous broadcast. Sends inputs to every active Roblox PID.</p>
+    <section id="vision" class="section">
+        <div class="container">
+            <h2 class="section-title" data-value="THE VISION">THE VISION</h2>
+            <div class="content-grid">
+                <div class="text-block">
+                    <h3>Stop doing manual work</h3>
+                    <p>I don't like wasting time. If I have to do a task more than twice, I build a robot to do it for me. My goal is to turn human effort into autonomous workflows.</p>
+                </div>
+                <div class="text-block">
+                    <h3>Inspirations</h3>
+                    <p><strong>Italy's Metros:</strong> Driverless trains that move thousands of people using only sensors and code.</p>
+                    <p><strong>Japan's Robotics:</strong> Service robots that handle logistics and hospitality without human friction.</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <section id="architecture" class="section inverted">
+        <div class="container">
+            <h2 class="section-title" data-value="ROBLOX BOTS">ROBLOX BOTS</h2>
+            <p>Roblox bots are controlled by code. There are 2 types: Exploit Bots and External Bots.</p>
+            <div class="architecture-grid">
+                <div class="arch-card">
+                    <h4>Exploit Bots</h4>
+                    <p>Risky and highly detectable. They inject code into the game, which usually leads to bans.</p>
+                </div>
+                <div class="arch-card">
+                    <h4>External Bots</h4>
+                    <p>Undetectable and safe. I code these in <strong>Python</strong> because it can control the mouse and keyboard like a human. I use the <code>py-roblox-bot</code> library to make characters move and chat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-value="PROJECTS">PROJECTS</h2>
+            <div class="project-grid">
+                <div class="card">
+                    <h4>Roblox Controller</h4>
+                    <p>A Discord Bot that allows users to control a Roblox account in-game directly from Discord.</p>
+                </div>
+                <div class="card">
+                    <h4>Kahoot Roblox Bot</h4>
+                    <p>A safer alternative to exploits. It works exactly like a real Kahoot bot but runs externally.</p>
+                </div>
+                <div class="card">
+                    <h4>Control Bot</h4>
+                    <p>Allows other users in the game to control my character using chat commands like "!forward 5".</p>
+                </div>
+                <div class="card">
+                    <h4>Pls Donate Bot</h4>
+                    <p>Earned 500+ Robux running overnight. It tells dad jokes for tips (5 Robux per joke).</p>
+                </div>
+                <div class="card">
+                    <h4>Speed Typer Bot</h4>
+                    <p>A chat game that challenges users to type long messages and tracks their completion time.</p>
+                </div>
+                <div class="card">
+                    <h4>Multi Message Bot</h4>
+                    <p>The simplest one. Input a message in the console, and it broadcasts to every active Roblox PID.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 class="section-title" data-value="CONTACT">CONTACT</h2>
+            <p>Need automation? Find me on Discord.</p>
+            <p class="discord-tag">@thescriptedbacon</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
