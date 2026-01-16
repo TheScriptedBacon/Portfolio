@@ -1,4 +1,3 @@
-// Scramble effect for section titles
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 document.querySelectorAll('.section-title').forEach(header => {
