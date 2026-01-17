@@ -23,33 +23,38 @@ document.querySelectorAll('.section-title').forEach(header => {
     }
 });
 
-// === MODAL POPUP LOGIC ===
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("img01");
-const closeBtn = document.getElementsByClassName("close")[0];
+// === POPUP LOGIC ===
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("img01");
+    const closeBtn = document.getElementsByClassName("close")[0];
 
-// Handle Source Links
-document.querySelectorAll('.source-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        
-        // Setup Modal
-        modal.style.display = "flex";
-        modal.style.flexDirection = "column";
-        modal.style.justifyContent = "center";
-        
-        // Set Image
-        modalImg.src = this.getAttribute('data-src');
+    // Select all links with class 'source-link'
+    document.querySelectorAll('.source-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // THIS STOPS THE REDIRECT
+            e.preventDefault(); 
+            
+            // Show the modal
+            modal.style.display = "flex";
+            modal.style.flexDirection = "column";
+            modal.style.justifyContent = "center";
+            modal.style.alignItems = "center";
+            
+            // Set the image src
+            modalImg.src = this.getAttribute('data-src');
+        });
     });
-});
 
-// Close functionality
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
+    // Close Button Action
+    closeBtn.onclick = function() {
         modal.style.display = "none";
     }
-}
+
+    // Close if clicking outside the image
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
