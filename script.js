@@ -1,139 +1,55 @@
-:root {
-    --bg: #050505;
-    --bg-secondary: #0a0a0a;
-    --fg: #e0e0e0;
-    --fg-muted: #888;
-    --accent: #ffffff;
-    --border: #222;
-    --font-heading: 'JetBrains Mono', monospace;
-    --font-body: 'Inter', sans-serif;
-    --success: #4ade80;
-    --danger: #f87171;
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+// Matrix Text Effect
+document.querySelectorAll('.section-title').forEach(header => {
+    header.onmouseover = event => {
+        let iterations = 0;
+        const interval = setInterval(() => {
+            event.target.innerText = event.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if (index < iterations) {
+                        return event.target.dataset.value[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)];
+                })
+                .join("");
+
+            if (iterations >= event.target.dataset.value.length) {
+                clearInterval(interval);
+            }
+            iterations += 1 / 3;
+        }, 30);
+    }
+});
+
+// === MODAL POPUP LOGIC ===
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("img01");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+// Handle Source Links
+document.querySelectorAll('.source-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        
+        // Setup Modal
+        modal.style.display = "flex";
+        modal.style.flexDirection = "column";
+        modal.style.justifyContent = "center";
+        
+        // Set Image
+        modalImg.src = this.getAttribute('data-src');
+    });
+});
+
+// Close functionality
+closeBtn.onclick = function() {
+    modal.style.display = "none";
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background-color: var(--bg); color: var(--fg); font-family: var(--font-body); line-height: 1.6; }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-.section { padding: 80px 0; border-bottom: 1px solid var(--border); }
-
-/* Nav */
-.navbar {
-    display: flex; justify-content: space-between; align-items: center; padding: 25px 5%;
-    position: fixed; width: 100%; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 1000;
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
-.logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; }
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { color: var(--fg-muted); text-decoration: none; font-size: 0.8rem; font-family: var(--font-heading); text-transform: uppercase; }
-
-/* Hero */
-.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.profile-pic { width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.1); margin-bottom: 30px; }
-h1 { font-family: var(--font-heading); font-size: clamp(3rem, 8vw, 5rem); letter-spacing: -3px; }
-.highlight { background: #fff; color: #000; padding: 0 10px; }
-.large-text { font-size: 1.5rem; color: var(--fg-dim); }
-
-/* Typography */
-.section-title { 
-    font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 40px; 
-    border-left: 4px solid #fff; padding-left: 15px; 
-}
-.sub-heading { font-family: var(--font-heading); margin: 40px 0 20px; text-transform: uppercase; }
-.logic-text { max-width: 900px; line-height: 1.8; color: var(--fg-muted); }
-
-/* Grids */
-.content-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
-.bot-types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.bot-type-card { background: var(--bg-secondary); padding: 40px; border: 1px solid var(--border); }
-.bot-type-card.danger { border-top: 4px solid var(--danger); }
-.bot-type-card.safe { border-top: 4px solid var(--success); }
-
-/* Project Field Grid */
-.fields-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 20px; 
-}
-.field-item { background: var(--bg-secondary); border: 1px solid var(--border); display: flex; flex-direction: column; }
-.field-label { 
-    font-family: var(--font-heading); font-size: 0.7rem; color: var(--fg-muted); 
-    padding: 10px 20px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); 
-}
-.field-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-.field-content h4 { margin-bottom: 10px; text-transform: uppercase; font-size: 1.1rem; }
-.field-content p { color: var(--fg-muted); font-size: 0.95rem; margin-bottom: 10px; }
-
-/* Contact */
-.contact-box { padding-top: 40px; }
-.discord-tag { 
-    display: inline-block; margin-top: 20px; font-family: var(--font-heading); 
-    border: 1px solid #fff; padding: 15px 30px; color: #fff; text-decoration: none; 
-}
-.discord-tag:hover { background: #fff; color: #000; }
-
-@media (max-width: 768px) {
-    .content-split, .bot-types-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-}
-
-/* === NEW IMAGE POPUP STYLES === */
-.source-link {
-    display: inline-block;
-    margin-top: auto; /* Push to bottom */
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    color: var(--success); 
-    text-decoration: none;
-    border-bottom: 1px dashed var(--success);
-    transition: opacity 0.3s;
-    width: fit-content;
-}
-
-.source-link:hover { opacity: 0.8; cursor: pointer; }
-
-/* Modal (Popup) Background */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    padding-top: 50px; 
-    left: 0; top: 0; width: 100%; height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.95); 
-    backdrop-filter: blur(5px);
-}
-
-/* Modal Image */
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-    border: 1px solid #333;
-    animation-name: zoom;
-    animation-duration: 0.3s;
-}
-
-@keyframes zoom {
-    from {transform:scale(0.8); opacity: 0;} 
-    to {transform:scale(1); opacity: 1;}
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-    font-family: var(--font-body);
-    z-index: 2001;
-}
-
-.close:hover { color: var(--danger); }
